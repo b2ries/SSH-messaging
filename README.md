@@ -13,7 +13,7 @@ Le **Système de Messagerie Sécurisée via SSH** est une application de message
 
 ## Technologies Utilisées
 
-- 🐍 **Langage de Programmation** : Python
+- 🐍 **Langage de Programmation** : C
 - 🔐 **Chiffrement** : AES-256 via la bibliothèque `openssl`
 - 🌐 **Protocoles** : SSH pour la transmission sécurisée
 
