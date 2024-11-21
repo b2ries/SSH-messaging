@@ -16,5 +16,5 @@ jobs:
         sudo apt-get install -y libcunit1 libcunit1-doc libcunit1-dev libssh2-1-dev
     - name: Build and run tests
       run: |
-        gcc -o messaging_module messaging_module.c test_messaging.c -lcunit -lssh2
+        gcc -o messaging_module messaging.c test_messaging.c -lcunit -lssh2
         ./messaging_module
