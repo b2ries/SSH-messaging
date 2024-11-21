@@ -18,3 +18,15 @@ jobs:
       run: |
         gcc -o messaging_module src/messaging.c tests/test_messaging.c -lcunit -lssh2
         ./messaging_module
+
+  run_test:
+    runs-on: ubuntu-latest
+    needs: build  # Assure que le job de construction est terminé avant d'exécuter les tests
+    if: github.ref == 'refs/heads/feature/main'  # Exécute uniquement sur la branche spécifiée
+
+    steps:
+      - uses: actions/checkout@v2  # Vérifie le code source
+
+      - name: Run tests
+        run: |
+          ./messaging_module  # Exécute le programme pour les tests
