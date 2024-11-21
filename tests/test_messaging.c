@@ -1,8 +1,8 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-#include "messaging.h"
-#include "encryption.h"
-#include "utils.h"
+#include "../include/messaging.h"
+#include "../include/encryption.h"
+#include "../include/utils.h"
 
 // Dummy encryption and decryption functions for testing
 void encrypt_message(const char *input, char *output, char *iv) {
