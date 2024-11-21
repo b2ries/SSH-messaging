@@ -1,6 +1,6 @@
-#include "messaging.h"
-#include "encryption.h"
-#include "utils.h"
+#include "../include/messaging.h"
+#include "../include/encryption.h"
+#include "../include/utils.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
