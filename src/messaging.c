@@ -9,6 +9,12 @@
 #include <pthread.h>
 #include <libssh2.h>
 #include <termios.h> // For hiding password input
+#include <openssl/aes.h> // Include OpenSSL AES header
+
+// Define AES_BLOCK_SIZE if not defined
+#ifndef AES_BLOCK_SIZE
+#define AES_BLOCK_SIZE 16 // AES block size in bytes
+#endif
 
 // Function to hide password input
 void get_hidden_input(const char *prompt, char *buffer, size_t size) {
