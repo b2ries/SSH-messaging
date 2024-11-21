@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -30,3 +29,15 @@ jobs:
       - name: Run tests
         run: |
           ./messaging_module  # Exécute le programme pour les tests
+          pytest --junitxml=report.xml  # Exécute les tests avec pytest et génère un rapport JUnit
+
+  upload_artifacts:
+    runs-on: ubuntu-latest
+    needs: run_test  # Assure que le job de tests est terminé avant d'exécuter ce job
+
+    steps:
+      - name: Upload test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: junit-report
+          path: report.xml  # Spécifie le rapport JUnit à collecter
